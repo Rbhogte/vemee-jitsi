@@ -1,0 +1,14 @@
+version:'3.5'
+
+services:
+   whiteboard:
+      imge: excalidraw/excalidraw-backend:latest
+      container_name: whiteboard
+      #expose:
+      #   - 9090
+      depends_on:
+          - web
+      networks:
+          meet.jitsi:
+             aliases:
+                 - ${WHITEBOARD_DOMAIN:-whiteboard.meet.jitsi}
